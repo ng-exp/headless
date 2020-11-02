@@ -1,0 +1,53 @@
+<h-menu class="relative">
+  <button hMenuButton class="mr-1 mb-1 pt-2 pb-2 pl-4 pr-4 bg-blue-500 text-white rounded">Menu 1</button>
+  <h-menu-items class="absolute block left-0 z-10 bg-white border rounded shadow focus:outline-none border-cool-gray-200">
+    <h-menu-item
+      class="block cursor-pointer hover:bg-blue-500 hover:text-white px-5 py-3 whitespace-no-wrap focus:outline-none hover:bg-blue-500"
+      #item11
+      [ngClass]="{ 'bg-blue-500 text-white': item11.isActive }"
+    >
+      Menu option 1
+    </h-menu-item>
+    <h-menu-item
+      class="block cursor-pointer hover:bg-blue-500 hover:text-white px-5 py-3 whitespace-no-wrap focus:outline-none hover:bg-blue-500"
+      #item12
+      [ngClass]="{ 'bg-blue-500 text-white': item12.isActive }"
+    >
+      Menu option 2
+    </h-menu-item>
+    <h-menu-item
+      class="block cursor-pointer hover:bg-blue-500 hover:text-white px-5 py-3 whitespace-no-wrap focus:outline-none hover:bg-blue-500"
+      #item13
+      [ngClass]="{ 'bg-blue-500 text-white': item13.isActive }"
+    >
+      Menu option 3
+    </h-menu-item>
+  </h-menu-items>
+</h-menu>
+
+<h-menu class="relative">
+  <button hMenuButton class="mr-1 mb-1 pt-2 pb-2 pl-4 pr-4 bg-green-500 text-white rounded">Menu 2</button>
+  <h-menu-items class="absolute block left-0 z-10 bg-white border rounded shadow focus:outline-none border-cool-gray-200">
+    <h-menu-item
+      class="block cursor-pointer hover:bg-green-500 hover:text-white px-5 py-3 whitespace-no-wrap focus:outline-none hover:bg-green-500"
+      #item21
+      [ngClass]="{ 'bg-green-500 text-white': item21.isActive }"
+    >
+      Menu option 1
+    </h-menu-item>
+    <h-menu-item
+      class="block cursor-pointer hover:bg-green-500 hover:text-white px-5 py-3 whitespace-no-wrap focus:outline-none hover:bg-green-500"
+      #item22
+      [ngClass]="{ 'bg-green-500 text-white': item22.isActive }"
+    >
+      Menu option 2
+    </h-menu-item>
+    <h-menu-item
+      class="block cursor-pointer hover:bg-green-500 hover:text-white px-5 py-3 whitespace-no-wrap focus:outline-none hover:bg-green-500"
+      #item23
+      [ngClass]="{ 'bg-green-500 text-white': item23.isActive }"
+    >
+      Menu option 3
+    </h-menu-item>
+  </h-menu-items>
+</h-menu>

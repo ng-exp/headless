@@ -1,0 +1,12 @@
+{
+  "name": "@ng-exp/headless-ui",
+  "version": "0.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^10.2.1",
+    "@angular/core": "^10.2.1"
+  }
+}

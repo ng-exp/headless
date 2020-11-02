@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "@lib/*": ["./projects/headless-ui/src/lib/*"],
+      "@ng-exp/headless-ui": ["./projects/headless-ui/src/public-api"]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "experimentalDecorators": true,
+    "strictTemplates": true
+  },
+  "typedocOptions": {
+    "mode": "modules",
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "exclude": "**/*+(test|polyfills|e2e|spec|stories).ts"
+  }
+}
