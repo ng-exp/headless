@@ -1,3 +1,3 @@
-@ng-exp/headless-ui
+@ngexp/headless-ui
 
 ...

@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class ClickDetectorService {
-  clickEvent$ = new Subject<EventTarget>();
+  readonly clickEvent$ = new Subject<EventTarget>();
 
   constructor() {}
 }

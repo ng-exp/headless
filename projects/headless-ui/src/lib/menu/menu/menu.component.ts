@@ -13,9 +13,10 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
-import { MenuButtonDirective } from '@lib/menu/menu-button';
+import { MenuButtonDirective } from '../../menu/menu-button';
 import { delay } from 'rxjs/operators';
-import { ClickDetectorService } from '@lib/utils';
+import { ClickDetectorService } from '../../click-detector';
+import { coerceBooleanProperty } from '../../coercion';
 
 @Component({
   selector: 'h-menu-item',
@@ -51,7 +52,7 @@ export class MenuItemComponent {
 })
 export class MenuItemsComponent implements OnDestroy {
   /** This observable tells menu what state it needs to be in, open or closed. */
-  openMenu$ = new Subject<boolean>();
+  readonly openMenu$ = new Subject<boolean>();
   private openMenuSub = this.openMenu$.pipe(delay(0)).subscribe((open) => {
     if (open) {
       if (this._menuItemComponentList.length > 0) {
@@ -156,7 +157,26 @@ export class MenuItemsComponent implements OnDestroy {
 })
 export class MenuComponent implements AfterViewInit, OnDestroy {
   /** True if the menu is open. */
-  menuIsOpen = false;
+  private _menuIsOpen = false;
+  get menuIsOpen(): any {
+    return this._menuIsOpen;
+  }
+  set menuIsOpen(value: any) {
+    this._menuIsOpen = coerceBooleanProperty(value);
+    this._menuItemsComponent.openMenu$.next(this._menuIsOpen);
+    if (this._menuIsOpen) {
+      // Global click events, if the click target is outside of us, close the menu.
+      this.clickDetectorSub = this.clickDetectorService.clickEvent$.subscribe((target) => {
+        if (!this.elementRef.nativeElement.contains(target)) {
+          this.closeMenu();
+        }
+      });
+    } else {
+      // When the menu is closed, unsubscribe to global click events for performance.
+      this.clickDetectorSub.unsubscribe();
+    }
+  }
+
   /** Subscription to the buttonDirective for clicks. */
   private buttonClickSub: Subscription;
   /** Subscription to the click detector service for global clicks. */
@@ -185,18 +205,6 @@ export class MenuComponent implements AfterViewInit, OnDestroy {
     // Handle click events from the buttonDirective to handle the open state of the menu.
     this.buttonClickSub = this._menuButtonDirective.buttonClick.subscribe(() => {
       this.menuIsOpen = !this.menuIsOpen;
-      this._menuItemsComponent.openMenu$.next(this.menuIsOpen);
-      if (this.menuIsOpen) {
-        // Global click events, if the click target is outside of us, close the menu.
-        this.clickDetectorSub = this.clickDetectorService.clickEvent$.subscribe((target) => {
-          if (!this.elementRef.nativeElement.contains(target)) {
-            this.closeMenu();
-          }
-        });
-      } else {
-        // When the menu is closed, unsubscribe to global click events for performance.
-        this.clickDetectorSub.unsubscribe();
-      }
     });
   }
 

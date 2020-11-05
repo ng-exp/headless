@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "@ng-exp/headless-ui": {
+    "@ngexp/headless-ui": {
       "projectType": "library",
       "root": "projects/headless",
       "sourceRoot": "projects/headless-ui/src",
@@ -154,5 +154,5 @@
       }
     }
   },
-  "defaultProject": "headless"
+  "defaultProject": "@ngexp/headless-ui"
 }

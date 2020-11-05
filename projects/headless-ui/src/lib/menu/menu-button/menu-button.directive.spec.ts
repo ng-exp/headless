@@ -1,4 +1,4 @@
-import { MenuButtonDirective } from '@lib/menu';
+import { MenuButtonDirective } from '..';
 
 describe('MenuButtonDirective', () => {
   it('should create an instance', () => {

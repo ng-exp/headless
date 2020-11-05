@@ -5,9 +5,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build @ng-exp/headless-ui --prod",
-    "test": "ng test @ng-exp/headless-ui --browsers=ChromeHeadless --watch=false",
-    "lint": "ng lint @ng-exp/headless-ui",
+    "build": "ng build @ngexp/headless-ui --prod",
+    "test": "ng test @ngexp/headless-ui --browsers=ChromeHeadless --watch=false",
+    "lint": "ng lint @ngexp/headless-ui",
     "e2e": "ng e2e"
   },
   "husky": {

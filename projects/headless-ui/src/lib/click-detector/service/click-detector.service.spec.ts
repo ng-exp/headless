@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { ClickDetectorService } from '@lib/utils';
+import { ClickDetectorService } from '..';
 
 describe('ClickDetectorService', () => {
   let service: ClickDetectorService;

@@ -1,4 +1,4 @@
-import { ClickDetectorDirective, ClickDetectorService } from '@lib/utils';
+import { ClickDetectorDirective, ClickDetectorService } from '..';
 
 describe('ClickDetectorDirective', () => {
   it('should create an instance', () => {

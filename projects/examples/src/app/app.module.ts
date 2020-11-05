@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuExampleComponent } from './menu-example/menu-example.component';
-import { MenuModule } from '@ng-exp/headless-ui';
+import { MenuModule } from '@ngexp/headless-ui';
 
 @NgModule({
   declarations: [AppComponent, MenuExampleComponent],

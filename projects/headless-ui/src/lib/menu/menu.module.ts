@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClickDetectorModule, ClickDetectorService } from '@lib/utils';
+import { ClickDetectorModule, ClickDetectorService } from '../click-detector';
 import { MenuButtonDirective, MenuComponent, MenuItemComponent, MenuItemsComponent } from '.';
 
 @NgModule({

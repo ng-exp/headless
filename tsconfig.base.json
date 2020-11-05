@@ -14,8 +14,8 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
     "paths": {
-      "@lib/*": ["./projects/headless-ui/src/lib/*"],
-      "@ng-exp/headless-ui": ["./projects/headless-ui/src/public-api"]
+      "@ngexp/headless-ui/*": ["./projects/headless-ui/src/lib/*"],
+      "@ngexp/headless-ui": ["./projects/headless-ui/src/public-api"]
     }
   },
   "angularCompilerOptions": {
