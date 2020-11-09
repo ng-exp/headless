@@ -12,6 +12,7 @@
       class="block cursor-pointer hover:bg-blue-500 hover:text-white px-5 py-3 whitespace-no-wrap focus:outline-none hover:bg-blue-500"
       #item12
       [ngClass]="{ 'bg-blue-500 text-white': item12.isActive }"
+      (click)="click()"
     >
       Menu option 2
     </h-menu-item>

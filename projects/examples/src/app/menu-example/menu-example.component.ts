@@ -8,4 +8,11 @@ export class MenuExampleComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  click() {
+    console.log('click');
+  }
+  test() {
+    console.log('test click');
+  }
 }

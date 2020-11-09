@@ -1,5 +1,5 @@
 import { Directive, HostListener } from '@angular/core';
-import { ClickDetectorService } from '../service';
+import { ClickDetectorService } from '../../click-detector/service';
 
 @Directive({
   selector: '[hClickDetector]',
